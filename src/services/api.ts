@@ -1,5 +1,5 @@
-const API = "contactapi-c4gfageygwd5aqck.westus3-01.azurewebsites.net";
-
+const API = process.env.NEXT_PUBLIC_API_URL;
+console.log(API);
 export const registerUser = async (username: string, password: string) => {
   await fetch(`${API}/auth/register`, {
     method: "POST",
@@ -9,7 +9,7 @@ export const registerUser = async (username: string, password: string) => {
 };
 
 export const loginUser = async (username: string, password: string) => {
-  const res = await fetch(`${API}/Authenticator/login`, {
+  const res = await fetch(`${API}/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, password })
@@ -19,7 +19,7 @@ export const loginUser = async (username: string, password: string) => {
 };
 
 export const getContacts = async (token: string) => {
-  const res = await fetch(`${API}/Authenticator/register`, {
+  const res = await fetch(`${API}/contact`, {
     headers: { Authorization: `Bearer ${token}` }
   });
   return res.json();
