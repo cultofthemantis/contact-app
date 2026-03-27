@@ -3,6 +3,7 @@
 import Login from "@/components/Login";
 import Register from "@/components/Register";
 import Contacts from "@/components/Contacts";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-6">
@@ -13,7 +14,7 @@ export default function Home() {
         <div className="bg-gray-800 rounded-2xl p-6 shadow-lg flex flex-col gap-6">
           
           <h1 className="text-3xl font-bold text-center">
-            Auth System
+            
           </h1>
 
           <div className="bg-gray-700 p-4 rounded-xl">
